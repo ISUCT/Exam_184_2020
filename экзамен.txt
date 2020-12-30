@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+using std::cout;
+ 
+class Car
+{
+public:
+    static int distanse;
+    
+    void start();
+    
+    void stop();
+    
+    int drive(int howlong){
+        distanse=howlong*60;
+        return(distanse); 
+};
+
+int main()
+{
+   cout<<"Дистанция="<<distanse;
+   return 0;
+}   
+
+};
