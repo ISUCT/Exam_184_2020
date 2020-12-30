@@ -7,12 +7,26 @@ class Animals
 public:
 	Animals(string location, string boundaries)
 	{
-		this->location = location;
-		this->boundaries = boundaries;
+		setLocation(location);
+		setBoundaries(boundaries);
 	}
 	virtual void display()
 	{
-		cout << "Animal sleep" << endl;
+		cout << "Animals " << location << " " << boundaries << endl;
+	}
+	virtual void sleep()
+	{
+		cout << "Animals sleep" << endl;
+	}
+	void setLocation(string location) {
+		if (location != "space") {
+			this->location = location;
+		}
+	}
+	void setBoundaries(string boundaries) {
+		if (location != "space") {
+			this->boundaries = boundaries;
+		}
 	}
 protected:
 	string location;
@@ -33,13 +47,18 @@ public:
 	Lion(string location, string boundaries) : Animals(location, boundaries) {};
 	void display() override
 	{
-		cout << "Lion " <<  location << " " << boundaries << endl;
+		cout << "Lion " << location << " " << boundaries << endl;
 	}
 };
 int main() {
 	Cat Basilyi("russia", "ivanovo");
 	Basilyi.display();
-	Lion Daniil("america", "arizona");
+	Lion Daniil("america", "brasilia");
 	Daniil.display();
+
 	return 0;
 }
+/*
+установить значение location
+поменять потом его
+*/
